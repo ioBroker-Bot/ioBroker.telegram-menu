@@ -32,10 +32,10 @@ sent, this looks for the appropriate call text, it must be written exactly as sh
 -   Various predefined submenus can be used, e.g. on-off, percent or numbers for e.g
     Roller shutter control, a new trigger is automatically created in the actions, but more on that below.
 
--   Es ist möglich, von einem Menü zu einem anderen Menü zu wechseln. Dies ergibt Sinn, wenn zwei Personen dasselbe Menü
-    gemeinsam verwenden, aber wenn User1 ein zusätzliches Menü erhält, auf das User2 keinen Zugriff haben soll. In beiden
-    Gruppen ist der entsprechende Button sichtbar, jedoch mit einer Funktionalität, die nur für User1 relevant ist. Damit
-    dies funktioniert, muss der jeweilige Benutzer in beiden Gruppen spezifiziert sein.
+-   It is possible to switch from one menu to another menu. This makes sense when two people share the same menu
+    share, but if User1 gets an additional menu that User2 should not have access to. In both
+    The corresponding button is visible to groups, but with functionality that is only relevant for User1. With it
+    For this to work, the respective user must be specified in both groups.
 
 -   In order for the second menu, i.e. a submenu, to work, the trigger text on the home page must be deactivated. Through
     If you deactivate it, the line will be displayed in orange and a message will appear indicating that it is a submenu
@@ -132,9 +132,9 @@ e.g. Home page), only entries that are younger than 48 hours can be deleted.
 
 -   This can be used to create a dynamic menu, in an array \[], always the name to be displayed and the value,
     Name|Value, or alternatively just the value, then the button is designated with the value, -LengthOfRow- with this you can
-    Specify how many buttons should be next to each other.**_Breaking Change!!!_** Please change manually:`[Name1:Value1, Name2:Value2]`change to`[Name1|Value1, Name2|Value2]`. Jetzt können auch Dezimalzahlen als Value
-    genutzt werden, z.B.(2.5).
-    Als Name kann jetzt auch ein Wert eines Datenpunkts genutzt werden. `{status:'ID':true}`<a href="#status">for more
+    Specify how many buttons should be next to each other.**_Breaking Change!!!_** Please change manually:`[Name1:Value1, Name2:Value2]`change to`[Name1|Value1, Name2|Value2]`. Decimal numbers can now also be used as values
+    can be used, e.g. (2.5).
+    A value of a data point can now also be used as a name.`{status:'ID':true}`<a href="#status">for more
     See information here</a>
 
 
@@ -154,7 +154,7 @@ e.g. Home page), only entries that are younger than 48 hours can be deleted.
     The trigger has exactly the same name as the button that is supposed to trigger the action.
 -   Under Value you can enter other values ​​so that they can be set; a separate SetState must be used for each value
     be created
--   It is possible to have the setting of the value confirmed, **as soon as`ack:true`was set**. Placeholder
+-   It is possible to have the setting of the value confirmed, **sobald `ack:true`was set**. Placeholder
     for the value is &&. Basically all states will be included`ack:false`set, this is fundamentally required
     if you want to use it to control adapters. A confirmation always only occurs when the addressed adapter
     Value up`ack:true`has set. But you would like to`ack:true`If you set it manually, you simply check the box next to Ack.<br>
