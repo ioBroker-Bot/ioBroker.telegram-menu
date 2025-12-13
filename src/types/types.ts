@@ -1,4 +1,3 @@
-import type { MockAdapter } from '@iobroker/testing';
 import type TelegramMenu from '../main';
 import type {
     BooleanString,
@@ -116,7 +115,7 @@ export interface SetDynamicValue {
     returnText: string;
     userToSend: string;
     parse_mode: boolean;
-    confirm: string;
+    confirm: boolean;
     telegramParams: TelegramParams;
     valueType: string;
     navToGoTo?: string;
@@ -139,7 +138,7 @@ export interface Switch {
     id: string;
     value: string;
     toggle: boolean;
-    confirm: BooleanString;
+    confirm: boolean;
     returnText: string;
     parse_mode: boolean;
     ack: boolean;
@@ -179,7 +178,7 @@ export type SplittedData = string[];
 
 export interface SetStateIds {
     id: string;
-    confirm: BooleanString | boolean;
+    confirm: boolean;
     returnText?: string;
     userToSend: string;
     parse_mode?: boolean;
@@ -284,7 +283,7 @@ export interface ExchangeValueReturn {
 
 export type PrimitiveType = string | number | boolean;
 
-export type Adapter = MockAdapter | TelegramMenu;
+export type Adapter = TelegramMenu;
 
 export interface Timeouts {
     key: string;

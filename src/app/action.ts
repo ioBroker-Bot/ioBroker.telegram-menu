@@ -95,7 +95,7 @@ export function generateActions({
                     id: IDs[index],
                     value: values[index],
                     toggle: toggle,
-                    confirm: confirm[index],
+                    confirm: confirm[index] === 'true',
                     returnText: returnText[index],
                     ack: ack?.length ? isTruthy(ack[index]) : false,
                     parse_mode: parse_mode?.length ? isTruthy(parse_mode?.[0]) : false,
@@ -110,7 +110,10 @@ export function generateActions({
             const actions = action?.[item.objName as keyof Actions];
 
             actions?.forEach(function (element, index) {
-                const trigger = (element as TriggerableActions)?.trigger[0];
+                const trigger: string | undefined = (element as TriggerableActions)?.trigger?.[0];
+                if (!trigger) {
+                    return;
+                }
                 userObject[trigger] = { [item.name]: [] };
                 if (index == 0) {
                     userObject[trigger] = { [item.name as keyof UserObjectActions]: [] };

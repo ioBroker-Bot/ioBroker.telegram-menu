@@ -64,7 +64,7 @@ function generateActions({ action, userObject, adapter, }) {
                     id: IDs[index],
                     value: values[index],
                     toggle: toggle,
-                    confirm: confirm[index],
+                    confirm: confirm[index] === 'true',
                     returnText: returnText[index],
                     ack: ack?.length ? (0, utils_1.isTruthy)(ack[index]) : false,
                     parse_mode: parse_mode?.length ? (0, utils_1.isTruthy)(parse_mode?.[0]) : false,
@@ -77,7 +77,10 @@ function generateActions({ action, userObject, adapter, }) {
         config_1.arrayOfEntries.forEach(item => {
             const actions = action?.[item.objName];
             actions?.forEach(function (element, index) {
-                const trigger = element?.trigger[0];
+                const trigger = element?.trigger?.[0];
+                if (!trigger) {
+                    return;
+                }
                 userObject[trigger] = { [item.name]: [] };
                 if (index == 0) {
                     userObject[trigger] = { [item.name]: [] };
