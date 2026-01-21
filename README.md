@@ -35,6 +35,10 @@ You can create different groups with separate menus, and then assign users to th
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- FIX: Errors reported by sentry
+
 ### 3.2.3 (2025-12-12)
 
 - FIX: Errors reported by sentry
@@ -582,7 +586,7 @@ CHORE: #401 Update config
 
 MIT License
 
-Copyright (c) 2025 MiRo1310 <michael.roling@gmx.de>
+Copyright (c) 2023-2026 MiRo1310 <michael.roling@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
